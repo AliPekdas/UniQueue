@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniQueue</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="cinematic-grain">
+    <header class="app-header">
+      <div class="logo">UniQueue</div>
+      <div id="userBadge" class="user-badge hidden"></div>
+      <div class="header-right">
+        <div id="systemTitle" class="system-title">Campus Resource Reservation System</div>
+        <button id="logoutBtn" class="btn btn-ghost hidden" type="button">Sign Out</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="loginScreen" class="screen active">
+        <div class="hero">
+          <h1>UniQueue</h1>
+          <p>Sign in with your email and password.</p>
+        </div>
+        <div class="panel login-panel">
+          <form id="loginForm">
+            <div class="form-row login-form-row">
+              <input type="email" id="loginEmail" placeholder="Email" autocomplete="username" required />
+              <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" required />
+            </div>
+            <button type="submit" class="btn btn-primary login-submit">Sign In</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="studentScreen" class="screen">
+        <div class="hero">
+          <h1>Student Dashboard</h1>
+          <p>Book study rooms and office hours. View transit schedules.</p>
+        </div>
+        <div class="tabs" id="studentTabs">
+          <button type="button" class="tab active" data-tab="study">Study Rooms</button>
+          <button type="button" class="tab" data-tab="office">Office Hours</button>
+          <button type="button" class="tab" data-tab="transit">Transit Lines</button>
+        </div>
+        <div class="panel" id="studentStudyPanel">
+          <div id="studentStudyGrid" class="resource-grid"></div>
+        </div>
+        <div class="panel hidden" id="studentOfficePanel">
+          <div id="studentOfficeGrid" class="resource-grid"></div>
+        </div>
+        <div class="panel hidden" id="studentTransitPanel">
+          <div id="studentTransitGrid" class="resource-grid"></div>
+        </div>
+        <div class="panel">
+          <h2>My Reservations</h2>
+          <ul id="studentReservations" class="reservation-list"></ul>
+        </div>
+        <div class="panel">
+          <h2>Notifications</h2>
+          <ul id="studentNotifications" class="reservation-list"></ul>
+        </div>
+      </section>
+
+      <section id="lecturerScreen" class="screen">
+        <div class="hero">
+          <h1>My Office Hours</h1>
+          <p>Add, update or remove your office hour slots. Students are notified when you change or remove a slot with bookings.</p>
+        </div>
+        <div class="panel">
+          <form id="lecturerResourceForm">
+            <div class="form-row">
+              <input type="text" id="lecturerResourceName" placeholder="Name" required />
+              <input type="number" id="lecturerMaxCapacity" placeholder="Capacity" min="1" required />
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+          <div id="lecturerResourceGrid" class="resource-grid"></div>
+        </div>
+      </section>
+
+      <section id="driverScreen" class="screen">
+        <div class="hero">
+          <h1>My Transit Lines</h1>
+          <p>Add or remove lines you operate. Students are notified when a line is removed.</p>
+        </div>
+        <div class="panel">
+          <form id="driverResourceForm">
+            <div class="form-row">
+              <input type="text" id="driverLineName" placeholder="Name" required />
+              <input type="text" id="driverSchedule" placeholder="Schedule" required />
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+          <div id="driverResourceGrid" class="resource-grid"></div>
+        </div>
+      </section>
+
+      <section id="adminScreen" class="screen">
+        <div class="tabs" id="adminTabs">
+          <button type="button" class="tab active" data-tab="study">Study Rooms</button>
+          <button type="button" class="tab" data-tab="office">Office Hours</button>
+          <button type="button" class="tab" data-tab="transit">Transit Lines</button>
+        </div>
+        <div class="panel">
+          <form id="adminResourceForm">
+            <div class="form-row">
+              <span id="adminFormFields" style="display: contents;"></span>
+              <button type="submit" class="btn btn-primary" id="adminSubmitBtn">Add</button>
+            </div>
+          </form>
+          <div id="adminResourceGrid" class="resource-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toastContainer"></div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
