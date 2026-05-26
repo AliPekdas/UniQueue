@@ -48,14 +48,3 @@ Once the server is running, open your web browser and navigate to:
 **[http://localhost:3000](http://localhost:3000)**
 
 You can log in using any of the sample accounts created by the `init.sql` script.
-
-Sample email and passwords:
-alipekdas@marun.edu.tr ➔ alipekdas
-ebubekirbagdas@marun.edu.tr ➔ ebubekirbagdas
-ilkerelgin@marun.edu.tr ➔ ilkerelgin
-dogukansahin@marun.edu.tr ➔ dogukansahin
-borahantumer@marmara.edu.tr ➔ borahantumer
-mehmetkaya@marmara.edu.tr ➔ mehmetkaya
-busdriver1@iett.istanbul ➔ busdriver1
-busdriver2@iett.istanbul ➔ busdriver2
-admin@uniqueue.com ➔ admin
